@@ -8,11 +8,14 @@ class PeeringDB:
 
     cache_enable = None
     cache_ttl = None
-    redis = Redis()
+    cache_prefix = None
+    redis = None
 
-    def __init__(self, cache=True, cache_ttl = 300):
+    def __init__(self, cache=True, cache_ttl=300, cache_prefix="peeringdb", cache_host="localhost", cache_port=6379, cache_db=0):
         self.cache_enable = cache
         self.cache_ttl = cache_ttl
+        self.cache_prefix = cache_prefix
+        self.redis = Redis(host=cache_host, port=cache_port, db=cache_db)
         return
 
 
@@ -22,7 +25,7 @@ class PeeringDB:
             data = self.pdb_getsrc(param)
         else:
             # caching
-            key = "peerindb_%s" % (param)
+            key = "%s_%s" % (self.cache_prefix, param)
             print key
             data = self.redis.get(key)
             if data is None:
@@ -38,7 +41,6 @@ class PeeringDB:
         url = "https://beta.peeringdb.com/api/%s" % (param)
         resp = urllib2.urlopen(url)
         return resp.read()
-
 
     def asn(self, asn):
         return self.pdb_get("asn/%s" % (asn))
