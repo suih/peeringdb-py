@@ -11,7 +11,7 @@ class PeeringDB:
     cache_prefix = None
     redis = None
 
-    def __init__(self, cache=True, cache_ttl=300, cache_prefix="peeringdb", cache_host="localhost", cache_port=6379, cache_db=0):
+    def __init__(self, cache=True, cache_ttl=900, cache_prefix="peeringdb", cache_host="localhost", cache_port=6379, cache_db=0):
         self.cache_enable = cache
         self.cache_ttl = cache_ttl
         self.cache_prefix = cache_prefix
