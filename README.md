@@ -1,2 +1,3 @@
 # peeringdb-py
-PeeringDB Python library
+
+A PeeringDB Python library with optional local caching.
