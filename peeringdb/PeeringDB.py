@@ -38,3 +38,13 @@ class PeeringDB:
         url = "https://beta.peeringdb.com/api/%s" % (param)
         resp = urllib2.urlopen(url)
         return resp.read()
+
+
+    def asn(self, asn):
+        return self.pdb_get("asn/%s" % (asn))
+
+    def ixlan(self, ixlanid):
+        return self.pdb_get("ixlan/%s" % (ixlanid))
+
+    def ix(self, ixid):
+        return self.pdb_get("ix/%s" % (ixid))
