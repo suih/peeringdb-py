@@ -1,6 +1,6 @@
 # peeringdb-py
 
-A [PeeringDB](https://beta.peeringdb.com/docs/) 2.0 API client Python library. Making use of the new [REST API](https://beta.peeringdb.com/docs/api_specs/).
+A [PeeringDB](https://beta.peeringdb.com/docs/) 2.0 API wrapper client Python library. Making use of the new [REST API](https://beta.peeringdb.com/docs/api_specs/).
 
 ## Installation
 
@@ -13,16 +13,16 @@ $ sudo pip install peeringdb
 ## Getting started
 
 ```python
->>> import peeringdb
->>> pdb = peeringdb.PeeringDB()
+>>> from peeringdb.PeeringDB import PeeringDB
+>>> pdb = PeeringDB()
 >>> print pdb.asn(2906)
 ```
 
 Find common IX locations:
 
 ```python
->>> import peeringdb
->>> pdb = peeringdb.PeeringDB()
+>>> from peeringdb.PeeringDB import PeeringDB
+>>> pdb = PeeringDB()
 >>> print pdb.matching_ixlan([2906, 5089])
 ```
 
@@ -33,22 +33,22 @@ This library can optionally use [Redis](http://redis.io/) to improve the perform
 By default the library will connect to a Redis instance running on localhost:6379, API responses are cached for 15 minutes, this can be easily disabled:
 
 ```python
->>> import peeringdb
->>> pdb = peeringdb.PeeringDB(cache=False)
+>>> from peeringdb.PeeringDB import PeeringDB
+>>> pdb = PeeringDB(cache=False)
 ```
 
 A different host and port specified:
 
 ```python
->>> import peeringdb
->>> pdb = peeringdb.PeeringDB(cache_host=mycache.bigisp.org, cache_port=6800)
+>>> from peeringdb.PeeringDB import PeeringDB
+>>> pdb = PeeringDB(cache_host=mycache.bigisp.org, cache_port=6800)
 ```
 
 Cache TTL increased to 1 hour:
 
 ```python
->>> import peeringdb
->>> pdb = peeringdb.PeeringDB(cache_ttl=3600)
+>>> from peeringdb.PeeringDB import PeeringDB
+>>> pdb = PeeringDB(cache_ttl=3600)
 ```
 
 
