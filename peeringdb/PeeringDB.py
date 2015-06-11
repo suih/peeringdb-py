@@ -129,6 +129,15 @@ class PeeringDB:
                 ixlan_obj = self.ixlan(ixlan)
                 # grab ix object too
                 ixlan_obj["ix_obj"] = self.ix(ixlan_obj["ix"])
+                ixlan_obj["links"] = self.get_ixlanlinks(asns[asn], ixlan)
                 ixlan_match.append(ixlan_obj)
 
         return ixlan_match
+
+
+    def get_ixlanlinks(self, asn, ixlan_id):
+        links = []
+        for link in asn["ixlink_set"]:
+            if link["ix_lan"] == ixlan_id:
+                links.append(link)
+        return links
