@@ -2,8 +2,6 @@
 
 A [PeeringDB](https://beta.peeringdb.com/docs/) 2.0 API client Python library. Making use of the new [REST API](https://beta.peeringdb.com/docs/api_specs/).
 
-![](https://readthedocs.org/projects/peeringdb/badge/?version=latest)
-
 ## Caching
 
 This library can optionally use Redis to improve the performance of your application, responses from the PeeringDB API by default are cached for 15 minutes.
