@@ -1,6 +1,6 @@
 # peeringdb-py
 
-A PeeringDB Python library.
+A [PeeringDB](https://beta.peeringdb.com/docs/) 2.0 API client Python library. Makes use of the new [REST API](https://beta.peeringdb.com/docs/api_specs/).
 
 ## Caching
 
@@ -32,3 +32,7 @@ print pdb.asn(2906)
 ## License
 
 Apache 2.0
+
+## Author
+
+nat@netflix.com
