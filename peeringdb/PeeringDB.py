@@ -38,21 +38,38 @@ class PeeringDB:
 
 
     def pdb_getsrc(self, param):
+        agent = "peeringdb-py"
         url = "https://beta.peeringdb.com/api/%s" % (param)
         resp = urllib2.urlopen(url)
         return resp.read()
 
+    def get_obj(self, type, id):
+
+        return self.pdb_get("%s/%s" % (type, id))
 
     # base objects
 
     def asn(self, asn):
-        return self.pdb_get("asn/%s" % (asn))
+        return self.get_obj("asn", asn)
+
+    def fac(self, facid):
+        return self.get_obj("fac", facid)
 
     def ixlan(self, ixlanid):
-        return self.pdb_get("ixlan/%s" % (ixlanid))
+        return self.get_obj("ixlan", ixlanid)
 
     def ix(self, ixid):
-        return self.pdb_get("ix/%s" % (ixid))
+        return self.get_obj("ix", ixid)
+
+    def net(self, netid):
+        return self.get_obj("net", netid)
+
+    def org(self, orgid):
+        return self.get_id("org", orgid)
+
+    def poc(self, pocid):
+        return self.get_id("poc", pocid)
+
 
     # helpers
 

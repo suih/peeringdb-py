@@ -1,6 +1,6 @@
 # peeringdb-py
 
-A [PeeringDB](https://beta.peeringdb.com/docs/) 2.0 API client Python library. Makes use of the new [REST API](https://beta.peeringdb.com/docs/api_specs/).
+A [PeeringDB](https://beta.peeringdb.com/docs/) 2.0 API client Python library. Making use of the new [REST API](https://beta.peeringdb.com/docs/api_specs/).
 
 ## Caching
 
