@@ -23,5 +23,17 @@ setup(
   url = 'https://github.com/natm/peeringdb-py',
   download_url = 'https://github.com/natm/peeringdb-py/tarball/0.1',
   keywords = ['peering', 'peeringdb', 'bgp'],
-  classifiers = [],
+  license = 'Apache 2.0',
+  classifiers = [
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
+    'Intended Audience :: System Administrators',
+    'Intended Audience :: Telecommunications Industry',
+    'License :: OSI Approved :: Apache Software License',
+    'Programming Language :: Python :: 2.7',
+    'Topic :: Database :: Front-Ends',
+    'Topic :: Internet',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Topic :: System :: Networking'
+  ],
 )
