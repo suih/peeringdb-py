@@ -1,5 +1,5 @@
 
-__version__ = '2.10.3'
+__version__ = '0.1'
 VERSION = tuple(map(int, __version__.split('.')))
 
 __all__ = ['PeeringDB']
