@@ -16,12 +16,12 @@ from distutils.core import setup
 setup(
   name = 'peeringdb',
   packages = ['peeringdb'], # this must be the same as the name above
-  version = '0.1',
+  version = '0.2',
   description = 'PeeringDB API Python library',
   author = 'Nat Morris',
   author_email = 'nat@netflix.com',
-  url = 'https://github.com/natm/peeringdb-py',
-  download_url = 'https://github.com/natm/peeringdb-py/tarball/0.1',
+  url = 'https://github.com/netflix/peeringdb-py',
+  download_url = 'https://github.com/netflix/peeringdb-py/tarball/0.1',
   keywords = ['peering', 'peeringdb', 'bgp'],
   license = 'Apache 2.0',
   classifiers = [
