@@ -27,7 +27,6 @@ class PeeringDB:
         else:
             # caching
             key = "%s_%s" % (self.cache_prefix, param)
-            print key
             data = self.redis.get(key)
             if data is None:
                 data = self.pdb_getsrc(param)
@@ -71,6 +70,21 @@ class PeeringDB:
         return self.get_id("poc", pocid)
 
     # helpers
+
+    def matching_facility(self, asnnums):
+
+        asns = {}
+        facility_all = {}
+        for asnnum in asnnums:
+            asn = self.asn(asnnum)
+            asns[asnnum] = asn
+            for facility in asn["facility_set"]:
+                facilityid = facility["facility"]
+                if facility not in facility_all:
+                    facility_all[facility] = None
+
+        facility_match = []
+        return facility_match
 
     def matching_ixlan(self, asnnums):
 
