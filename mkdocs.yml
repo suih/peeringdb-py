@@ -1,2 +1,3 @@
 site_name: peeringdb-py
 theme: readthedocs
+repo_url: https://github.com/natm/peeringdb-py/
