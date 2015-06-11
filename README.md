@@ -22,6 +22,14 @@ pdb = peeringdb.PeeringDB()
 print pdb.asn(2906)
 ```
 
+Find common IX locations:
+
+```
+import peeringdb
+pdb = peeringdb.PeeringDB()
+print pdb.matching_ixlan([2906, 5089])
+```
+
 ## Contributing
 
  1. Fork the repo on GitHub
