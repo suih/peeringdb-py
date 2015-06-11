@@ -30,7 +30,7 @@ Find common IX locations:
 
 This library can optionally use [Redis](http://redis.io/) to improve the performance of your application and also reduce the load on the PeeringDB API.
 
-By default the library will use the Redis running on localhost:6379, API responses are cached for 15 minutes, this can be easily disabled:
+By default the library will connect to a Redis instance running on localhost:6379, API responses are cached for 15 minutes, this can be easily disabled:
 
 ```python
 >>> import peeringdb
