@@ -2,10 +2,6 @@
 
 A [PeeringDB](https://beta.peeringdb.com/docs/) 2.0 API client Python library. Making use of the new [REST API](https://beta.peeringdb.com/docs/api_specs/).
 
-## Caching
-
-This library can optionally use Redis to improve the performance of your application, responses from the PeeringDB API by default are cached for 15 minutes.
-
 ## Installation
 
 To install peeringdb-py, simply:
@@ -28,6 +24,24 @@ Find common IX locations:
 >>> import peeringdb
 >>> pdb = peeringdb.PeeringDB()
 >>> print pdb.matching_ixlan([2906, 5089])
+```
+
+## Caching
+
+This library can optionally use Redis to improve the performance of your application, responses from the PeeringDB API by default are cached for 15 minutes.
+
+By default the library will use the Redis running on localhost:6379, this can be easily disabled:
+
+```python
+>>> import peeringdb
+>>> pdb = peeringdb.PeeringDB(cache=False)
+```
+
+Or a different host and port specificed:
+
+```python
+>>> import peeringdb
+>>> pdb = peeringdb.PeeringDB(cache_host=mycache.bigisp.org, cache_port=6800)
 ```
 
 ## Contributing
