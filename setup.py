@@ -21,7 +21,7 @@ setup(
   author = 'Nat Morris',
   author_email = 'nat@netflix.com',
   url = 'https://github.com/netflix/peeringdb-py',
-  download_url = 'https://github.com/netflix/peeringdb-py/tarball/0.1',
+  download_url = 'https://github.com/netflix/peeringdb-py/tarball/master',
   keywords = ['peering', 'peeringdb', 'bgp'],
   license = 'Apache 2.0',
   classifiers = [
