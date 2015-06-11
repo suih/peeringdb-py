@@ -28,21 +28,29 @@ Find common IX locations:
 
 ## Caching
 
-This library can optionally use Redis to improve the performance of your application, responses from the PeeringDB API by default are cached for 15 minutes.
+This library can optionally use [Redis](http://redis.io/) to improve the performance of your application and also reduce the load on the PeeringDB API.
 
-By default the library will use the Redis running on localhost:6379, this can be easily disabled:
+By default the library will use the Redis running on localhost:6379, API responses are cached for 15 minutes, this can be easily disabled:
 
 ```python
 >>> import peeringdb
 >>> pdb = peeringdb.PeeringDB(cache=False)
 ```
 
-Or a different host and port specificed:
+A different host and port specified:
 
 ```python
 >>> import peeringdb
 >>> pdb = peeringdb.PeeringDB(cache_host=mycache.bigisp.org, cache_port=6800)
 ```
+
+Cache TTL increased to 1 hour:
+
+```python
+>>> import peeringdb
+>>> pdb = peeringdb.PeeringDB(cache_ttl=3600)
+```
+
 
 ## Contributing
 
