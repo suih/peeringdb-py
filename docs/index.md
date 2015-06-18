@@ -1,6 +1,6 @@
-# Welcome to peering-db's documentation
+# Welcome to peeringdb-py's documentation
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+For full documentation visit [peeringdb.readthedocs.org](http://peeringdb.readthedocs.org).
 
 ## Commands
 
