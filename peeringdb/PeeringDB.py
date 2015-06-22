@@ -47,12 +47,22 @@ class PeeringDB:
                 p.set(key, data)
                 p.expireat(key, int(time.time()) + self.cache_ttl)
                 p.execute()
+        if data is None or data == "None":
+            return None
         return json.loads(data)["data"][0]
 
     def pdb_getsrc(self, param):
         agent = "peeringdb-py"
         url = "https://beta.peeringdb.com/api/%s" % (param)
-        resp = urllib2.urlopen(url)
+        opener = urllib2.build_opener()
+        opener.addheaders = [('User-agent', agent)]
+        try:
+            resp = opener.open(url)
+        except urllib2.HTTPError, err:
+            if err.code == 404:
+                return None
+            else:
+                raise
         return resp.read()
 
     def get_obj(self, type, id):
@@ -133,7 +143,6 @@ class PeeringDB:
                 ixlan_match.append(ixlan_obj)
 
         return ixlan_match
-
 
     def get_ixlanlinks(self, asn, ixlan_id):
         links = []
