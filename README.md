@@ -51,7 +51,7 @@ Cache TTL increased to 1 hour:
 >>> pdb = PeeringDB(cache_ttl=3600)
 ```
 
-## Running unit TestASN
+## Running unit tests
 
 ```
 $ cd peeringdb-py
