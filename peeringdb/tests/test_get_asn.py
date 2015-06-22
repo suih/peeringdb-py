@@ -33,5 +33,12 @@ class TestASN(unittest.TestCase):
         asn = self.PDB.asn(64496)
         self.assertIsNone(asn)
 
+    # Check the returned object is as expected
+
+    def test_check_returned_asn_2906(self):
+        # Netflix, make sure the ASN we get back in the object is the same
+        asn = self.PDB.asn(2906)
+        self.assertEqual(asn["asn"], 2906)
+
 if __name__ == '__main__':
     unittest.main()
